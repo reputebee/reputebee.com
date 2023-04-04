@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar-top"><!-- Your top navbar here --></nav>
+    <div id="div">
+      
+      <canvas id="canvas" width="800" height="600">Hello World</canvas>
+    </div>
+
+    <img src="img/g2.png" />
+    <img src="img/capterra.png" />
+    <img src="img/gartner.png" />
+    <img src="img/trustpilot.png" />
+    <nav class="navbar-bottom"><!-- Your bottom navbar here --></nav>
+
+    <script>
+      // Get the canvas element and its context
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+
+      // Load the background image
+      var bg = new Image();
+      bg.src = "img/background.jpg";
+      bg.onload = function () {
+        // Draw the background image on the canvas
+        ctx.drawImage(bg, 0, 0);
+
+        // Load the icons
+        var icon1 = new Image();
+        var icon2 = new Image();
+        var icon3 = new Image();
+        var icon4 = new Image();
+
+        icon1.src = "img/capterra.png";
+        icon2.src = "img/g2.png";
+        icon3.src = "img/gartner.png";
+        icon4.src = "img/trustpilot.png";
+
+        // Wait for all icons to load
+        Promise.all(
+          [icon1, icon2, icon3, icon4].map(
+            (img) => new Promise((resolve) => (img.onload = resolve))
+          )
+        ).then(() => {
+          // Get the div element and its position and size
+          var div = document.getElementById("div");
+          var rect = div.getBoundingClientRect();
+
+          // Calculate the coordinates of the icons
+          var x1 = rect.left - 64; // Left-top corner
+          var y1 = rect.top - 64;
+          var x2 = rect.right - 64; // Right-top corner
+          var y2 = rect.top - 64;
+          var x3 = rect.left - 64; // Left-bottom corner
+          var y3 = rect.bottom - 64;
+          var x4 = rect.right - 64; // Right-bottom corner
+          var y4 = rect.bottom - 64;
+
+          // Draw the icons on the canvas
+          ctx.drawImage(icon1, x1, y1);
+          ctx.drawImage(icon2, x2, y2);
+          ctx.drawImage(icon3, x3, y3);
+          ctx.drawImage(icon4, x4, y4);
+        });
+      };
+    </script>
+  </body>
+</html>
