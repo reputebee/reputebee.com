@@ -1,0 +1,339 @@
+<html>
+  <head>
+    <!-- Include Flowbite CSS via CDN -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+
+    <nav
+      class="px-2 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700"
+    >
+      <div
+        class="container flex flex-wrap items-center justify-between mx-auto"
+      >
+        <a href="#" class="flex items-center">
+          <img
+            src="https://flowbite.com/docs/images/logo.svg"
+            class="h-6 mr-3 sm:h-10"
+            alt="Flowbite Logo"
+          />
+          <span
+            class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+            >Flowbite</span
+          >
+        </a>
+        <button
+          data-collapse-toggle="navbar-multi-level"
+          type="button"
+          class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-multi-level"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-6 h-6"
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
+          <ul
+            class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+              >
+                Dropdown
+                <svg
+                  class="w-4 h-4 ml-1"
+                  aria-hidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownNavbar"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+              >
+                <ul
+                  class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Dashboard</a
+                    >
+                  </li>
+                  <li aria-labelledby="dropdownNavbarLink">
+                    <button
+                      id="doubleDropdownButton"
+                      data-dropdown-toggle="doubleDropdown"
+                      data-dropdown-placement="right-start"
+                      type="button"
+                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Dropdown<svg
+                        aria-hidden="true"
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div
+                      id="doubleDropdown"
+                      class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                    >
+                      <ul
+                        class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                        aria-labelledby="doubleDropdownButton"
+                      >
+                        <li>
+                          <a
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Overview</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >My downloads</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Billing</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Rewards</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Earnings</a
+                    >
+                  </li>
+                </ul>
+                <div class="py-1">
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                    >Sign out</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="flex items-center justify-center py-24 bg-orange-50">
+      <div
+        class="max-w-6xl mx-auto px-8 py-4 items-center justify-center rounded-lg shadow-lg"
+      >
+        <div>
+          <!-- class="flex flex-col -mx-4" -->
+          <div class="w-full items-center justify-center px-4">
+            <h1
+              class="text-7xl leading-normal text-center font-bold text-gray-800 mb-4"
+            >
+              Customers’ Testimonials Instantly in your website!
+            </h1>
+            <p class="text-xl text-center text-gray-600 mb-8">
+              Boost your Conversion Rate with Instant Customer Social Proof on
+              your Website and Beyond!
+            </p>
+            <div class="items-center w-3/4 space-x-2 mb-4">
+              <div class="w-full">
+                <form>
+                  <label
+                    for="search"
+                    class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+                    >email address here</label
+                  >
+                  <div class="flex items-center">
+                    <!-- class="relative" -->
+                    <div
+                      class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <!-- class="block w-full p-4 pl-10 text-4xl text-gray-900 border border-orange-600 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" -->
+                    <div class="relative">
+                      <input
+                        type="email"
+                        id="email"
+                        class="block mx-auto p-4 pl-10 pr-3 text-4xl text-gray-900 border border-orange-600 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        style="width: 70%; max-width: 600px"
+                        placeholder="email address here"
+                        required
+                      />
+                      <!-- class="text-white text-xl absolute px-4 py-2 right-2.5 bottom-4 bg-orange-600 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" -->
+
+                      <button
+                        type="submit"
+                        class="absolute top-0 right-2.5 bottom-4 inline-block px-6 py-4 font-medium leading-5 text-white transition duration-150 ease-in-out bg-orange-600 border border-transparent rounded-full shadow hover:bg-orange-500 focus:outline-none focus:shadow-outline-orange focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                      >
+                        Get Started
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <p class="text-gray-500">No credit card required.</p>
+          </div>
+          <div class="w-full px-8 text-center">
+            <img
+              src="img/hero_v3.svg"
+              alt="Hero image"
+              class="mx-auto w-full h-full object-cover"
+              width="1296"
+              height="382"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <section
+      class="flex items-center justify-center bg-gradient-to-r from-blue-400 to-purple-500"
+    >
+      <!-- <div
+        class="max-w-6xl p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
+      > -->
+      <div class="max-w-8xl mx-auto px-4 py-4 bg-white rounded-lg shadow-lg">
+        <div
+          class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
+                Work fast from anywhere
+              </h5>
+              <p
+                class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400"
+              >
+                Stay up to date and move work forward with Flowbite on iOS &
+                Android. Download the app today.
+              </p>
+            </div>
+            <div>
+              <img
+                class="h-auto max-w-full rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer section -->
+    <footer class="bg-gray-800 py-12">
+      <div
+        class="max-w-6xl mx-auto px-8 flex flex-wrap justify-between items-center"
+      >
+        <div class="flex items-center space-x-4 mb-8 lg:mb-0">
+          <img src="logo.png" alt="Logo" class="h-8 mr-2" />
+          <span class="text-xl font-bold text-white">My Website</span>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white">About</a>
+          <a href="#" class="text-gray-400 hover:text-white">Contact</a>
+          <a href="#" class="text-gray-400 hover:text-white">Terms</a>
+          <a href="#" class="text-gray-400 hover:text-white">Privacy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
