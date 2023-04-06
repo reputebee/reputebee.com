@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
   <head>
+    <title>ReputeBee: Manage</title>
     <!-- Include Flowbite CSS via CDN -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css"
@@ -157,7 +159,7 @@
                   <span class="sr-only">Open user menu</span>
                   <img
                     class="w-8 h-8 rounded-full"
-                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                    src="img/profile.jpeg"
                     alt="user photo"
                   />
                 </button>
@@ -168,13 +170,13 @@
               >
                 <div class="px-4 py-3" role="none">
                   <p class="text-sm text-gray-900 dark:text-white" role="none">
-                    Neil Sims
+                    Jason Bourne
                   </p>
                   <p
                     class="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
                     role="none"
                   >
-                    neil.sims@flowbite.com
+                  jason.bourne@reputebee.com
                   </p>
                 </div>
                 <ul class="py-1" role="none">
@@ -183,7 +185,7 @@
                       href="#"
                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                       role="menuitem"
-                      >Dashboard</a
+                      >profile</a
                     >
                   </li>
                   <li>
@@ -194,14 +196,7 @@
                       >Settings</a
                     >
                   </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                      role="menuitem"
-                      >Earnings</a
-                    >
-                  </li>
+
                   <li>
                     <a
                       href="#"
@@ -344,7 +339,7 @@
               aria-controls="dropdown-pages"
               data-collapse-toggle="dropdown-pages"
             >
-              <span class="flex-1 ml-3 text-left whitespace-nowrap">Pages</span>
+              <span class="flex-1 ml-3 text-left whitespace-nowrap">Your Social Share</span>
               <svg
                 class="w-6 h-6"
                 fill="currentColor"
@@ -363,21 +358,21 @@
                 <a
                   href="#"
                   class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >Settings</a
+                  >Wall of love</a
                 >
               </li>
               <li>
                 <a
                   href="#"
                   class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >Kanban</a
+                  >Widgets</a
                 >
               </li>
               <li>
                 <a
                   href="#"
                   class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >Calendar</a
+                  >Pop Ups</a
                 >
               </li>
             </ul>
@@ -389,7 +384,7 @@
               aria-controls="dropdown-sales"
               data-collapse-toggle="dropdown-sales"
             >
-              <span class="flex-1 ml-3 text-left whitespace-nowrap">Sales</span>
+              <span class="flex-1 ml-3 text-left whitespace-nowrap">Collect</span>
               <svg
                 class="w-6 h-6"
                 fill="currentColor"
@@ -408,38 +403,26 @@
                 <a
                   href="#"
                   class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >Products</a
+                  >Testimonials Requests</a
                 >
               </li>
               <li>
                 <a
                   href="#"
                   class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >Billing</a
+                  >Import Existing</a
                 >
               </li>
               <li>
                 <a
                   href="#"
                   class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >Invoice</a
+                  >Triggers/webhooks</a
                 >
               </li>
             </ul>
           </li>
-          <li>
-            <a
-              href="#"
-              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-            >
-              <span class="flex-1 ml-3 whitespace-nowrap">Messages</span>
-              <span
-                class="inline-flex justify-center items-center w-5 h-5 text-xs font-semibold rounded-full text-primary-800 bg-primary-100 dark:bg-primary-200 dark:text-primary-800"
-              >
-                6
-              </span>
-            </a>
-          </li>
+
           <li>
             <button
               type="button"
@@ -448,7 +431,7 @@
               data-collapse-toggle="dropdown-authentication"
             >
               <span class="flex-1 ml-3 text-left whitespace-nowrap"
-                >Authentication</span
+                >Admin settings</span
               >
               <svg
                 class="w-6 h-6"
@@ -468,21 +451,14 @@
                 <a
                   href="#"
                   class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >Sign In</a
+                  >Profile info</a
                 >
               </li>
               <li>
                 <a
                   href="#"
                   class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >Sign Up</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >Forgot Password</a
+                  >Subscription</a
                 >
               </li>
             </ul>
