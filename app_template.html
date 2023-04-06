@@ -1,0 +1,660 @@
+<html>
+  <head>
+    <!-- Include Flowbite CSS via CDN -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary_old: {
+                50: "#eff6ff",
+                100: "#dbeafe",
+                200: "#bfdbfe",
+                300: "#93c5fd",
+                400: "#60a5fa",
+                500: "#3b82f6",
+                600: "#2563eb",
+                700: "#1d4ed8",
+                800: "#1e40af",
+                900: "#1e3a8a",
+              },
+              primary: {
+                50: "#f7f5fb",
+                100: "#f0ebf7",
+                200: "#d9ceec",
+                300: "#c2b0e1",
+                400: "#9474ca",
+                500: "#6639b3",
+                600: "#5c33a1",
+                700: "#4d2b86",
+                800: "#3d226b",
+                900: "#321c58",
+              },
+              orange_: {
+                50: "#fff8f6",
+                100: "#fff1ec",
+                200: "#ffdcd0",
+                300: "#ffc7b3",
+                400: "#ff9d7b",
+                500: "#ff7342",
+                600: "#e6683b",
+                700: "#bf5632",
+                800: "#994528",
+                900: "#7d3820",
+              },
+              secondary: {
+                50: "#fff7f4",
+                100: "#fff0e9",
+                200: "#fed9c7",
+                300: "#fdc1a5",
+                400: "#fc9362",
+                500: "#fb651e",
+                600: "#e25b1b",
+                700: "#bc4c17",
+                800: "#973d12",
+                900: "#7b310f",
+              },
+              tangerine: "#ff7342",
+            },
+          },
+          fontFamily: {
+            body: [
+              "Inter",
+              "ui-sans-serif",
+              "system-ui",
+              "-apple-system",
+              "system-ui",
+              "Segoe UI",
+              "Roboto",
+              "Helvetica Neue",
+              "Arial",
+              "Noto Sans",
+              "sans-serif",
+              "Apple Color Emoji",
+              "Segoe UI Emoji",
+              "Segoe UI Symbol",
+              "Noto Color Emoji",
+            ],
+            sans: [
+              "Inter",
+              "ui-sans-serif",
+              "system-ui",
+              "-apple-system",
+              "system-ui",
+              "Segoe UI",
+              "Roboto",
+              "Helvetica Neue",
+              "Arial",
+              "Noto Sans",
+              "sans-serif",
+              "Apple Color Emoji",
+              "Segoe UI Emoji",
+              "Segoe UI Symbol",
+              "Noto Color Emoji",
+            ],
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+
+    <!-- sidenav section -->
+
+    <nav
+      class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+    >
+      <div class="px-3 py-3 lg:px-5 lg:pl-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center justify-start">
+            <button
+              data-drawer-target="logo-sidebar"
+              data-drawer-toggle="logo-sidebar"
+              aria-controls="logo-sidebar"
+              type="button"
+              class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            >
+              <span class="sr-only">Open sidebar</span>
+              <svg
+                class="w-6 h-6"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"
+                  d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+                ></path>
+              </svg>
+            </button>
+            <a href="#" class="flex ml-2 md:mr-24">
+              <img
+                src="img/reputebee_logo_Right_text.svg"
+                class="h-6 mr-3 sm:h-10"
+                alt="RupeteBee Logo"
+              />
+            </a>
+          </div>
+          <div class="flex items-center">
+            <div class="flex items-center ml-3">
+              <div>
+                <button
+                  type="button"
+                  class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                  aria-expanded="false"
+                  data-dropdown-toggle="dropdown-user"
+                >
+                  <span class="sr-only">Open user menu</span>
+                  <img
+                    class="w-8 h-8 rounded-full"
+                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                    alt="user photo"
+                  />
+                </button>
+              </div>
+              <div
+                class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                id="dropdown-user"
+              >
+                <div class="px-4 py-3" role="none">
+                  <p class="text-sm text-gray-900 dark:text-white" role="none">
+                    Neil Sims
+                  </p>
+                  <p
+                    class="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
+                    role="none"
+                  >
+                    neil.sims@flowbite.com
+                  </p>
+                </div>
+                <ul class="py-1" role="none">
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                      role="menuitem"
+                      >Dashboard</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                      role="menuitem"
+                      >Settings</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                      role="menuitem"
+                      >Earnings</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                      role="menuitem"
+                      >Sign out</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <aside class="flex fixed top-0 left-0 h-full" aria-label="Sidebar">
+      <div
+        class="overflow-y-auto z-30 py-5 px-3 w-16 h-full bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+      >
+        <a href="#">
+          <img
+            src="https://flowbite.com/docs/images/logo.svg"
+            class="pl-2 mb-6 h-7"
+            alt="Flowbite Logo"
+          />
+        </a>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-400 rounded-lg transition duration-75 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              <svg
+                aria-hidden="true"
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-400 rounded-lg transition duration-75 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-400 rounded-lg transition duration-75 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-400 rounded-lg transition duration-75 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"
+                ></path>
+                <path
+                  d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-400 rounded-lg transition duration-75 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
+        id="secondary-sidenav"
+        class="overflow-y-auto relative py-5 px-3 w-64 h-full bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+      >
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <span class="ml-3">Overview</span>
+            </a>
+          </li>
+          <li>
+            <button
+              type="button"
+              class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              aria-controls="dropdown-pages"
+              data-collapse-toggle="dropdown-pages"
+            >
+              <span class="flex-1 ml-3 text-left whitespace-nowrap">Your Social Share</span>
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+            <ul id="dropdown-pages" class="hidden py-2 space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >Wall of love</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >Widgets</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >Pop Ups</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <button
+              type="button"
+              class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              aria-controls="dropdown-sales"
+              data-collapse-toggle="dropdown-sales"
+            >
+              <span class="flex-1 ml-3 text-left whitespace-nowrap">Collect</span>
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+            <ul id="dropdown-sales" class="hidden py-2 space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >Testimonials Requests</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >Import Existing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >Triggers/webhooks</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <button
+              type="button"
+              class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              aria-controls="dropdown-authentication"
+              data-collapse-toggle="dropdown-authentication"
+            >
+              <span class="flex-1 ml-3 text-left whitespace-nowrap"
+                >Admin settings</span
+              >
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+            <ul id="dropdown-authentication" class="hidden py-2 space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >Profile info</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >Subscription</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul
+          class="pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700"
+        >
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
+            >
+              <span class="ml-3">Docs</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
+            >
+              <span class="ml-3">Components</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
+            >
+              <span class="ml-3">Help</span>
+            </a>
+          </li>
+        </ul>
+        <div
+          class="flex absolute right-2 bottom-2 z-20 justify-end w-full bg-white dark:bg-gray-800"
+        >
+          <button
+            id="show-secondary-sidenav-button"
+            aria-controls="secondary-sidenav"
+            type="button"
+            class="inline-flex p-2 text-gray-500 rounded-full cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <button
+        id="hide-secondary-sidenav-button"
+        aria-controls="secondary-sidenav"
+        type="button"
+        class="inline-flex absolute bottom-2 left-20 p-2 text-gray-500 rounded-full cursor-pointer dark:text-gray-400 hover:text-gray-900 hover:bg-gray-200 dark:hover:bg-gray-700 dark:bg-gray-900 dark:hover:text-white bg-white"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+    </aside>
+    <script>
+      var hideSideNavButtonEl = document.getElementById(
+        "show-secondary-sidenav-button"
+      );
+      var showSideNavButtonEl = document.getElementById(
+        "hide-secondary-sidenav-button"
+      );
+      var sidenavEl = document.getElementById("secondary-sidenav");
+
+      // learn more about the Drawer object: https://flowbite.com/docs/components/drawer/#javascript-behaviour
+      var sideNav = new Drawer(sidenavEl, {
+        backdrop: false,
+        bodyScrolling: true,
+        onHide: function () {
+          showSideNavButtonEl.classList.remove("hidden");
+          hideSideNavButtonEl.classList.add("hidden");
+        },
+        onShow: function () {
+          showSideNavButtonEl.classList.add("hidden");
+          hideSideNavButtonEl.classList.remove("hidden");
+        },
+      });
+
+      // show by default
+      sideNav.show();
+
+      hideSideNavButtonEl.addEventListener("click", function () {
+        sideNav.hide();
+      });
+
+      showSideNavButtonEl.addEventListener("click", function () {
+        sideNav.show();
+      });
+    </script>
+    <!-- right body section Start-->
+    <div class="p-4 sm:ml-64">
+      <div
+        class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14"
+      >
+        <div class="grid grid-cols-3 gap-4 mb-4">
+          <div
+            class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800"
+          >
+            <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+          <div
+            class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800"
+          >
+            <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+          <div
+            class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800"
+          >
+            <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+        </div>
+        <div
+          class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800"
+        >
+          <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div
+            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
+          >
+            <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+          <div
+            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
+          >
+            <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+          <div
+            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
+          >
+            <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+          <div
+            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
+          >
+            <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+        </div>
+        <div
+          class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800"
+        >
+          <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div
+            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
+          >
+            <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+          <div
+            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
+          >
+            <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+          <div
+            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
+          >
+            <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+          <div
+            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
+          >
+            <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- right body section END-->
+  </body>
+</html>
