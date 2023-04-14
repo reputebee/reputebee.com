@@ -1,0 +1,16 @@
+{
+  "name": "jekyll-atlantic",
+  "version": "1.0.0",
+  "description": "A Jekyll Tailwind starter blog",
+  "dependencies": {
+    "@tailwindcss/typography": "latest",
+    "autoprefixer": "latest",
+    "cssnano": "^5.0.6",
+    "postcss": "latest",
+    "postcss-import": "latest",
+    "postcss-nested": "latest",
+    "tailwindcss": "latest"
+  },
+  "author": "rob@zerostatic.io",
+  "license": "MIT"
+}

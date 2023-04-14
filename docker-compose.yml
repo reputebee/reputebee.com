@@ -1,0 +1,27 @@
+version: "3"
+services:
+  jekyll-app:
+    build:
+      context: .
+      dockerfile: ./compose/jekyll/Dockerfile
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/srv/jekyll
+      - /srv/jekyll/node_modules
+    stdin_open: true
+    tty: true
+  # tailwind:
+  #   build:
+  #     context: .
+  #     dockerfile: ./compose/tailwind/Dockerfile
+  #   image: blog_tailwind
+  #   container_name: blog_tailwind
+  #   volumes:
+  #     - .:/app:z
+  #     # http://jdlm.info/articles/2016/03/06/lessons-building-node-app-docker.html
+  #     - /app/node_modules
+  #   working_dir: /app
+  #   command: npm run dev
+  #   stdin_open: true
+  #   tty: true #https://github.com/evanw/esbuild/issues/1848
