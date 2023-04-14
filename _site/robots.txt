@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /register/
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /search/
+Disallow: /contact-us/
+Disallow: /terms-and-conditions/
+Disallow: /privacy-policy/
+Disallow: /thank-you/
+Disallow: /404-error-page/
+Disallow: /500-error-page/
+Sitemap: https://example.com/sitemap.xml

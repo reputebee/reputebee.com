@@ -9,7 +9,8 @@
     "postcss": "latest",
     "postcss-import": "latest",
     "postcss-nested": "latest",
-    "tailwindcss": "latest"
+    "tailwindcss": "latest",
+    "flowbite": "latest"
   },
   "author": "rob@zerostatic.io",
   "license": "MIT"

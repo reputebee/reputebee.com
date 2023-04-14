@@ -1,6 +1,7 @@
 baseurl: "/"
 permalink: pretty
-title: "Jekyll Atlantic"
+title: "ReputeBee::"
+url: "https://reputebee.github.io"
 collections_dir: collections
 markdown: kramdown
 highlighter: rouge
@@ -13,24 +14,31 @@ sass:
 google_analytics_id: false # replace with "UA-XXXX"
 
 logo:
-  logo_desktop_image: assets/images/logo/logo.svg
-  logo_desktop_text: "Jekyll <strong>Atlantic</strong>"
-  logo_mobile_image: assets/images/logo/logo-mobile.svg
-  logo_mobile_text: ""
-  logo_desktop_height: "36px"
-  logo_desktop_width: "36px"
-  logo_mobile_height: "36px"
-  logo_mobile_width: "36px"
+  logo_desktop_image: img/reputebee_logo_Right_text.svg
+  logo_desktop_text: "ReputeBee:: <strong>Blog</strong>"
+  logo_mobile_image: img/reputebee_logo_Right_text.svg
+  logo_mobile_text: "ReputeBee:: <strong>Blog</strong>"
+  logo_desktop_height: "13.2mm"
+  logo_desktop_width: "56mm"
+  logo_mobile_height: "13.2mm"
+  logo_mobile_width: "56mm"
 
 seo:
-  meta_twitter_site: "@zerostaticio"
-  meta_twitter_creator: "@zerostaticio"
-  meta_og_image: "https://www.zerostatic.io/theme/jekyll-atlantic/jekyll-atlantic-screenshot.png"
+  meta_twitter_site: "@reputebee"
+  meta_twitter_creator: "@reputebee"
+  meta_og_image: "https://reputebee.github.io/img/reputebee_logo_Right_text.svg"
 
 plugins:
   - jekyll-environment-variables
   - jekyll-postcss
   - jekyll-paginate
+  - jekyll-gzip
+
+gzip:
+  extensions:
+    - '.html'
+    - '.css'
+    - '.js'
 
 paginate: 3
 paginate_path: /blog/page:num/

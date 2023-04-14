@@ -1,7 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: ["./_includes/**/*.html", "./_layouts/**/*.html", "./blog/*.html", "./_posts/*.html", "./*.html"],
+  content: ["./_includes/**/*.html", "./_layouts/**/*.html", "./blog/*.html", "./_posts/*.html", "./*.html", "./node_modules/flowbite/**/*.js"],
   darkMode: "class",
   theme: {
     screens: {
@@ -107,5 +107,6 @@ module.exports = {
     },
     container: [],
   },
-  plugins: [require("@tailwindcss/typography")],
+  // plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require('flowbite/plugin')],
 };
